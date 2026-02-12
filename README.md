@@ -21,9 +21,9 @@ source .venv/bin/activate
 
 ### Beipiel
 
-'''python
+```python
 python scripts/example.py
-'''
+```
 
 ## Projektstruktur
 
