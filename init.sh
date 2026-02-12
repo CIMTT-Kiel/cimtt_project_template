@@ -35,6 +35,12 @@ mv "src/project" "src/$NAME"
 # README-Titel setzen
 sedi "s/^# Projektname/# $NAME/" README.md
 
+# Git-Repo zurücksetzen
+rm -rf .git
+git init
+git add -A
+git commit -m "initial commit"
+
 # Dieses Skript entfernen
 rm -- "$0"
 
