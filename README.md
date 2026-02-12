@@ -1,10 +1,18 @@
 # Projektname
 
-Kurzbeschreibung des Projekts. Was wird bearbeitet?
+Kurzbeschreibung des Projekts. Was wird bearbeitet? 
 
 ## Setup
 
 Beschreibung wie das Projekt nach dem Klonen aufgesetzt und genutzt werden kann. Gerne auch durch Beipielcode für Kernfunktionen ergänzen. 
+
+Um dieses Projekt mit eigenem namen aufzusetzten kann das init.sh skript genutzt werden:
+
+```bash
+init.sh {dein_projektname}
+```
+
+dann venv initialisieren:
 
 ```bash
 uv sync
