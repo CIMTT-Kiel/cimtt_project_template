@@ -6,7 +6,7 @@ Kurzbeschreibung des Projekts. Was wird bearbeitet?
 
 Beschreibung wie das Projekt nach dem Klonen aufgesetzt und genutzt werden kann. Gerne auch durch Beipielcode für Kernfunktionen ergänzen. 
 
-Um dieses Projekt mit eigenem namen aufzusetzten kann das init.sh skript genutzt werden:
+Um dieses Projekt mit eigenem Namen aufzusetzten kann das init.sh skript genutzt werden. Dieses ersetzt den Platzhalter Projekt durch den gewählten Namen, erstellt ein entsprechendes Python Modul und initialisiert ein Virtuelles Environment in dem dieses Verfügbar ist. Außerdem wird ein neues Git-Repo initialisiert:
 
 ```bash
 init.sh {dein_projektname}
@@ -18,6 +18,12 @@ dann venv initialisieren:
 uv sync
 source .venv/bin/activate
 ```
+
+### Beipiel
+
+'''python
+python scripts/example.py
+'''
 
 ## Projektstruktur
 
