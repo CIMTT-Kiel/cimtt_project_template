@@ -12,22 +12,28 @@ if [[ ! "$NAME" =~ ^[a-z][a-z0-9_]*$ ]]; then
     exit 1
 fi
 
-# Platzhalter in Dateien ersetzen
-if [[ "$(uname)" == "Darwin" ]]; then
-    SED="sed -i ''"
-else
-    SED="sed -i"
-fi
+sedi() {
+    if [[ "$(uname)" == "Darwin" ]]; then
+        sed -i '' "$@"
+    else
+        sed -i "$@"
+    fi
+}
 
-for f in pyproject.toml README.md scripts/example.py tests/test_utils.py src/project/utils.py notebooks/example.ipynb; do
-    $SED "s/project/$NAME/g" "$f"
+# pyproject.toml: nur name = und packages = ersetzen (nicht [project])
+sedi "s/name = \"project\"/name = \"$NAME\"/" pyproject.toml
+sedi "s|src/project|src/$NAME|" pyproject.toml
+
+# Alle anderen Dateien: "project" im Import/Code ersetzen
+for f in README.md scripts/example.py tests/test_utils.py src/project/utils.py notebooks/example.ipynb; do
+    sedi "s/project/$NAME/g" "$f"
 done
 
 # Paketverzeichnis umbenennen
 mv "src/project" "src/$NAME"
 
 # README-Titel setzen
-$SED "s/^# Projektname/# $NAME/" README.md
+sedi "s/^# Projektname/# $NAME/" README.md
 
 # Dieses Skript entfernen
 rm -- "$0"
