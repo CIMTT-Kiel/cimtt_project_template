@@ -1,6 +1,6 @@
 # Projektname
 
-Kurzbeschreibung des Projekts. Was wird bearbeitet? 
+Kurzbeschreibung des Projekts.
 
 ## Setup
 
@@ -21,7 +21,7 @@ source .venv/bin/activate
 
 ### Beipiel
 
-```python
+```bash
 python scripts/example.py
 ```
 
