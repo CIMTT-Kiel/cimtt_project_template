@@ -41,6 +41,9 @@ git init
 git add -A
 git commit -m "initial commit"
 
+# venv initialisieren
+uv sync
+
 # Dieses Skript entfernen
 rm -- "$0"
 
